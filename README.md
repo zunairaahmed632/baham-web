@@ -11,7 +11,7 @@ Django web app for Baham. Baham is a project Dareecha initiative.
 - [Troubleshooting](#troubleshooting)
 
 ## Introduction <a name="introduction"></a>
-Some intro text here...
+<a href="https://github.com/esquaredsystems/baham-web/blob/master/User%20Story.txt">Problem background</a> and <a href="https://github.com/esquaredsystems/baham-web/blob/master/Requirement%20Analysis%20-%20Baham.pdf">Requirement Analysis</a>
 
 ## Deployment guide <a name="deployment"></a>
 How to deploy using NGINX and Gunicorn or Linux
