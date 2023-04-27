@@ -1,4 +1,4 @@
-from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadRequest
 from django.template import loader
 from django.urls import reverse
 
@@ -47,7 +47,10 @@ def save_vehicle(request):
     _model = request.POST.get('model')
     _type = request.POST.get('type')
     _capacity = request.POST.get('capacity')
-    #TODO: Validations
-    vehicleModel = VehicleModel(vendor=_vendor, model=_model, type=_type, capacity=_capacity)  #TODO:
+    if not _vendor or not _model:
+        return HttpResponseBadRequest('Manufacturer and Model name fields are mandatory!')
+    if not _capacity or _capacity < 2:
+        _capacity = 2 if _type == VehicleType.MOTORCYCLE else 4
+    vehicleModel = VehicleModel(vendor=_vendor, model=_model, type=_type, capacity=_capacity)
     vehicleModel.save()
     return HttpResponseRedirect(reverse('vehicles'))
