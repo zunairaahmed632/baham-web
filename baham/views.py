@@ -46,7 +46,7 @@ def save_vehicle(request):
     _vendor = request.POST.get('vendor')
     _model = request.POST.get('model')
     _type = request.POST.get('type')
-    _capacity = request.POST.get('capacity')
+    _capacity = int(request.POST.get('capacity'))
     if not _vendor or not _model:
         return HttpResponseBadRequest('Manufacturer and Model name fields are mandatory!')
     if not _capacity or _capacity < 2:
