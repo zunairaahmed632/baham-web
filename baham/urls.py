@@ -11,5 +11,5 @@ urlpatterns = [
     path('baham/aboutus/', views.view_aboutus, name='aboutus')
     path('baham/vehicles/void/<id>/', void_model, name='void_model'),
     path('baham/vehicles/unvoid/<id>/', unvoid_model, name='unvoid_model'),
-    
+   
 ]
